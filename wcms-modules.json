@@ -3,7 +3,7 @@
     "themes": {
         "style": {
             "name": "style",
-            "repo": "https://github.com/HiTman77/style/tree/master",
+            "repo": "https://github.com/HiTman77/style/tree/main",
             "zip": "https://github.com/HiTman77/style/archive/master.zip",
             "summary": "Fast",
             "version": "1.0.2",
