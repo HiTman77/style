@@ -61,7 +61,7 @@ function alterAdmin($args) {
     $wrapper->setAttribute("class", "change");
     $input = $doc->createElement("select");
     $input->setAttribute("class", "form-control");
-    $input->setAttribute("onchange", "fieldSaveStyle('background',this.value,'pages');");
+    $input->setAttribute("onchange", "fieldSaveParallax('background',this.value,'pages');");
     $input->setAttribute("name", "backgroundSelect");
 	$option = $doc->createElement("option");
 	$option->setAttribute("value", "");
@@ -81,10 +81,10 @@ function alterAdmin($args) {
     $wrapper->appendChild($input);
     $form_group->appendChild($wrapper);
     $doc->getElementById("currentPage")->insertBefore($form_group, $doc->getElementById("currentPage")->lastChild->previousSibling->previousSibling);
-    /* Input element for style type */
+    /* Input element for parallax type */
     $label = $doc->createElement("p");
     $label->setAttribute("class", "subTitle");
-    $label->nodeValue = "Style type";
+    $label->nodeValue = "Parallax type";
     $doc->getElementById("currentPage")->insertBefore($label, $doc->getElementById("currentPage")->lastChild->previousSibling->previousSibling);
 	$form_group = $doc->createElement("div");
     $form_group->setAttribute("class", "form-group");
@@ -92,15 +92,16 @@ function alterAdmin($args) {
     $wrapper->setAttribute("class", "change");
     $input = $doc->createElement("select");
     $input->setAttribute("class", "form-control");
-    $input->setAttribute("onchange", "fieldSaveStyle('style',this.value,'pages');");
-    $input->setAttribute("name", "styleSelect");
-    $types = ["Dual", "Style", "Inverse", "Scroll", "None"];
+    $input->setAttribute("onchange", "fieldSaveParallax('parallax',this.value,'pages');");
+    $input->setAttribute("name", "parallaxSelect");
+    $types = ["Dual", "Parallax", "Inverse", "Scroll", "None"];
     foreach($types as $type) {
     	$option = $doc->createElement("option");
     	$option->setAttribute("value", strtolower($type));
     	$option->nodeValue = $type;
-        if(isset($Wcms->get("pages", $Wcms->currentPage)->style) && $Wcms->get("pages", $Wcms->currentPage)->style == strtolower($type))
+        if(isset($Wcms->get("pages", $Wcms->currentPage)->parallax) && $Wcms->get("pages", $Wcms->currentPage)->parallax == strtolower($type))
 			$option->setAttribute("selected", "selected");
+
     	$input->appendChild($option);
     }
     $wrapper->appendChild($input);
