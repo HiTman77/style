@@ -26,13 +26,12 @@ if($Wcms->currentPage == $Wcms->get('config', 'login')) {
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?=$Wcms->get('config','siteTitle')?> - <?=$Wcms->page('title')?></title>
+	<title><?= $Wcms->page('title') ?> - <?= $Wcms->get('config', 'siteTitle') ?></title>
 	<meta name="description" content="<?=$Wcms->page('description')?>">
 	<meta name="keywords" content="<?=$Wcms->page('keywords')?>">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
 	<?= $Wcms->css() ?>
- 
 	<link rel="stylesheet" href="<?= $Wcms->asset('css/style.css?v4') ?>">
  
 	<?php /* Translate php to some javascript variables and css rules. Please don't replicate this. */ ?>
