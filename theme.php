@@ -50,12 +50,11 @@ if($Wcms->currentPage == $Wcms->get('config', 'login')) {
 </button>
 <a class="navbar-brand" href="/"><img src="/data/files/logo.png" alt="<?=$Wcms->get('config','siteTitle')?>"></a></div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  			<ul class="nav navbar-nav navbar-right">
-					<?=$Wcms->menu()?>
-				</ul>
-			</div>
-		</div>
-	</nav>
+<ul class="nav navbar-nav navbar-right">
+<?=$Wcms->menu()?>
+</ul>
+</div></div>
+</nav>
 	<?php if($height != 0): ?>
 	<header class="parallax-wrapper">
 		<div class="parallax" style='background-image: url(<?=json_encode($page_image)?>);'>
